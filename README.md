@@ -172,7 +172,7 @@ sed 's/,$//' masato_its_emu.csv | sed 's/kingdom/Kingdom/g' | sed 's/phylum/Phyl
 
 ## Abrir RStudio y seguir las indicaciones del docente.
 
-## Cargar el archivo generado en el programa Easy16S (https://shiny.migale.inrae.fr/app/easy16S) y exportarlo en BIOM.
+## Cargar el archivo generado en el programa Easy16S (https://shiny.migale.inrae.fr/app/easy16S) y exportarlo en BIOM (junto con su metadata en CSV).
 ```
 
 ## 6. Análisis de diversidad  
@@ -181,6 +181,7 @@ Abrir el archivo BIOM en el programa microbiomeanalyst(https://www.microbiomeana
 
 ## 7. Analisis metataxonómico de las secuencias 16S
 
+```bash
 La localización de las secuencias 16S esta en /data/2025_1/sequencing/metataxonomica/16s_curso/
 
 Distribución de los barcodes: Grupo 1: b01, b02, b03, b04, b18 | Grupo 2: b05, b06, b07, b08, b17 | Grupo 3: b09, b10, b11, b12, b19 | Grupo 4: b13, b14, b15, b16, b20
@@ -197,28 +198,29 @@ Copiar los archivos *_16s.fastq_rel-abundance.tsv a la carpeta /data/2025_1/16s_
 
 Copiar los archivos *_16s.fastq_rel-abundance.tsv que estan en la carpeta /data/2025_1/16s_alumnos segun el siguiente esquema: Grupo 1 copiara los archivos del Grupo 2, Grupo 2 copiara los archivos del Grupo 4, el Grupo 3 copiara los archivos del Grupo 1, Grupo 4 copiara los archivos del Grupo 3
 
-Generar el archivo emu-combined-tax_id.tsv y su respectivo archivo BIOM
+Generar el archivo emu-combined-tax_id.tsv y su respectivo archivo BIOM (reemplazar masato_its por masato_16s)
 
 Realizar el analisis de diversidad
+```
 
 # Bitácora de la práctica:
 
 ## Resultados
 
 ```bash
+•	Flujograma de todo el pipeline realizado 
 •	Valores de calidad y numero de lecturas en la data cruda y después de la limpieza 
-•	Estadísticas del denoising 
-•	Análisis de abundancia a nivel de genero 
-•	Análisis de alfa diversidad (2 métricas) a nivel de familia y género 
-•	Análisis de beta diversidad (PCoA y NMDS) a nivel de familia y género 
+•	Análisis de abundancia en todos los niveles taxonómicos
+•	Análisis de diversidad alfa (seleccionar 3 métricas) a nivel de género y familia 
+•	Análisis de beta diversidad (PCoA y NMDS) a nivel de género y familia
+•	Análisis de core microbiome a nivel de género
 ```
 
 ## Discusión
 
 ```bash
-•	Explicar que métrica de la diversidad alfa y que categoria taxonómica representa mejor la diversidad de cada muestra
-•	Explicar cual metodo de ordinación de la diversidad beta se correlacina con la similaridad/disimilaridad de las muestras
-•	Indicar si hay diferencias con lo reportado en el artículo científico.
+•	Explicar que métrica de la diversidad alfa representa mejor la diversidad de las muestras
+•	Explicar cual metodo de ordinación de la diversidad beta explica mejor la similaridad/disimilaridad de las muestras
 ```
 
 
