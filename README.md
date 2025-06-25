@@ -85,10 +85,8 @@ cd its
 conda activate quality
 
 NanoPlot -t 5 --fastq /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz -p b01_its_ --only-report --maxlength 5000 -o .
-```
 
-```bash
-Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
+# Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
 ```
 
 ```bash
