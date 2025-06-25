@@ -46,7 +46,7 @@ MicrobiomeAnalyst v2.0 https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/home.x
 
 ## Metodología:
 
-## 1.	Acceso al servidor de cómputo:
+## 1.	Acceso al servidor de cómputo
 
 ### Abrir el programa PuTTY, colocar el hostname ( 10.142.250.66 ) y port ( 22 ), y dar clic en Open:
 
@@ -87,9 +87,7 @@ conda activate quality
 NanoPlot -t 5 --fastq /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz -p b01_its_ --only-report --maxlength 5000 -o .
 
 # Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
-```
 
-```bash
 multiqc -o masato_its .
 ```
 
@@ -103,6 +101,8 @@ mkdir trim
 cd trim
 
 gunzip -c /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz | NanoFilt -q 10 --length 600 --maxlength 2000 | gzip > b01_its.fastq.gz
+
+# Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
 ```
 
 ```bash
@@ -135,6 +135,26 @@ echo "-----------------------------------"
 
 sh count
 ```
+
+## 4. Identificación del perfil taxonómico a partir de los archivos FASTQ
+
+### Regresar a la carpeta metataxonomic, crear la carpeta taxonomy, entrar en ella, correr el programa EMU utilizando la base de datos de EMU en el caso de 16S o la base de datos UNITE en el caso de ITS, exportar y visualizar los resultados:
+
+```bash
+cd ~/metataxonomic/
+
+mkdir taxonomy
+
+cd taxonomy
+
+emu abundance --type map-ont --threads 10 --db /data/db/emu/unite/ --output-dir . ~/metataxonomic/trim/nanofilt/b00_nanofilt.fastq.gz
+
+emu combine-outputs . tax_id
+```
+
+
+
+
 
 
 ### 3.1 Crear los archivos metadata.txt y manifest.txt con las siguientes informaciones:
