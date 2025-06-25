@@ -170,7 +170,7 @@ awk 'BEGIN{FS=OFS=","}{sub(/\r$/,"");print $1,$9,$8,$7,$6,$5,$4,$3,$2,$10,$11,$1
 
 sed 's/,$//' masato_its_emu.csv | sed 's/superkingdom/kingdom/g' > masato_its_emu_final.csv
 
-sed 's/,$//' masato_its_emu.csv | sed 's/kingdom/Kingdom/g' | sed 's/phylum/Phylum/g' | sed 's/class/Class/g' | sed 's/order/Order/g' | sed 's/family/Family/g' | sed 's/genus/Genus/g' | sed 's/species/Species/g' | 's/_its.fastq//g'> masato_its_emu_final.csv
+sed 's/,$//' masato_its_emu_final.csv | sed 's/kingdom/Kingdom/g' | sed 's/phylum/Phylum/g' | sed 's/class/Class/g' | sed 's/order/Order/g' | sed 's/family/Family/g' | sed 's/genus/Genus/g' | sed 's/species/Species/g' | 's/_its.fastq//g' > masato_its_emu_final.csv
 
 ## Crear en Windows la carpeta metataxonomic, copiar el archivo CSV final y descomprimir el archivo biom.rar que está en el aula virtual.
 
