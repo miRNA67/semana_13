@@ -67,6 +67,29 @@ MicrobiomeAnalyst v2.0 https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/home.x
 
 ## 2. Análisis de calidad del secuenciamiento Nanopore
 
+```bash
+cd
+
+mkdir metataxonomic
+
+cd metataxonomic
+
+mkdir quality
+
+cd quality
+
+mkdir its
+
+cd its
+
+conda activate quality
+
+NanoPlot -t 2 --fastq /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz -p b01_its_ -o b15_its --maxlength 5000
+```
+
+```bash
+Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
+```
 
 ## 3. Análisis metataxonómico utilizando datos Illumina
 
