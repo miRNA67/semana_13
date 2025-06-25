@@ -217,7 +217,6 @@ Realizar el analisis de diversidad
 •	Análisis de abundancia en todos los niveles taxonómicos
 •	Análisis de diversidad alfa (seleccionar 3 métricas) a nivel de género y familia 
 •	Análisis de beta diversidad (PCoA y NMDS) a nivel de género y familia
-•	Análisis de core microbiome a nivel de género
 ```
 
 ## Discusión
