@@ -177,9 +177,29 @@ sed 's/,$//' masato_its_emu.csv | sed 's/kingdom/Kingdom/g' | sed 's/phylum/Phyl
 
 ## 6. Análisis de diversidad  
 
-## Abrir el archivo BIOM en el programa microbiomeanalyst(https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/ModuleView.xhtml) y seguir las indicaciones del docente
+Abrir el archivo BIOM en el programa microbiomeanalyst(https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/ModuleView.xhtml) y seguir las indicaciones del docente
 
-## 7. Analisis metataxonómico de 16S
+## 7. Analisis metataxonómico de las secuencias 16S
+
+La localización de las secuencias 16S esta en /data/2025_1/sequencing/metataxonomica/16s_curso/
+
+Distribución de los barcodes: Grupo 1: b01, b02, b03, b04, b18 | Grupo 2: b05, b06, b07, b08, b17 | Grupo 3: b09, b10, b11, b12, b19 | Grupo 4: b13, b14, b15, b16, b20
+
+Realizar la visualización de calidad de las secuencias de sus respectivos barcodes
+
+Realizar la limpieza de los FASTQ utilizando los siguientes criterios: un Q minimo de 10, una longitud minima de secuencia de 1000 y una longitud máxima de 2000
+
+Calcular el número total de lecturas limpias
+
+Realizar el análisis metataxonómico de sus respectivos barcodes utilizando la base de datos localizada en /data/db/emu/emu/
+
+Copiar los archivos *_16s.fastq_rel-abundance.tsv a la carpeta /data/2025_1/16s_alumnos
+
+Copiar los archivos *_16s.fastq_rel-abundance.tsv que estan en la carpeta /data/2025_1/16s_alumnos segun el siguiente esquema: Grupo 1 copiara los archivos del Grupo 2, Grupo 2 copiara los archivos del Grupo 4, el Grupo 3 copiara los archivos del Grupo 1, Grupo 4 copiara los archivos del Grupo 3
+
+Generar el archivo emu-combined-tax_id.tsv y su respectivo archivo BIOM
+
+Realizar el analisis de diversidad
 
 # Bitácora de la práctica:
 
