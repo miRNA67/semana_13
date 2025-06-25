@@ -108,34 +108,35 @@ gunzip -c /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz | NanoFi
 ```
 
 ```bash
-# Crear el siguiente script:
+# Crear el script count.sh con nano:
 
 nano count.sh
 
+# Pegar la siguiente información:
+
 #!/bin/bash
 
-echo "--- Conteo de Lecturas por Muestra (Archivos FASTQ) ---"
-echo "Archivo FASTQ | Número de Lecturas"
+echo "--- Conteo de Lecturas por Muestra (Archivos FASTQ.GZ) ---"
+echo "Archivo FASTQ.GZ | Número de Lecturas"
 echo "-----------------------------------"
 
-for file in *.fastq; do
+# Loop through all .fastq.gz files in the current directory
+for file in *.fastq.gz; do
     if [ -f "$file" ]; then
-        num_lines=$(wc -l < "$file" | awk '{print $1}')
+        # Decompress the file on the fly and count lines
+        num_lines=$(zcat "$file" | wc -l | awk '{print $1}')
+        # Each read in a FASTQ file (compressed or not) consists of 4 lines
         num_reads=$(echo "$num_lines / 4" | bc)
-        printf "%-15s | %s\n" "$file" "$num_reads"
+        printf "%-20s | %s\n" "$file" "$num_reads"
     fi
 done
 
 echo "-----------------------------------"
+
+# Ejecutar el script:
+
+sh count
 ```
-
-```bash
-cd ~/genomics/quality/nanopore
-
-NanoPlot -t 2 --fastq ~/genomics/trimming/nanopore/b15_sup_nanofilt.fastq.gz -p b15_sup_filt_ -o b15_sup_filt --maxlength 100000
-```
-
-
 
 
 ### 3.1 Crear los archivos metadata.txt y manifest.txt con las siguientes informaciones:
