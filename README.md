@@ -32,7 +32,7 @@ Emu v3.5.1 https://github.com/treangenlab/emu
 
 MultiQC v1.28.0 https://multiqc.info
    - **Descripción:** MultiQC es una herramienta que agrega informes de control de calidad de múltiples herramientas de análisis bioinformático en un único informe HTML interactivo. Es compatible con una amplia gama de herramientas, incluyendo FastQC, NanoPlot, PycoQC y Trim Galore!, facilitando la revisión y comparación de los resultados de control de calidad de múltiples muestras.
-   - 
+
 Nanofilt v2.8.0 https://github.com/wdecoster/nanofilt
    - **Descripción:** NanoFilt es una herramienta para filtrar datos de secuenciación de Nanopore basándose en la calidad y la longitud de los reads. Permite seleccionar reads de alta calidad para análisis posteriores.
 
@@ -84,14 +84,59 @@ cd its
 
 conda activate quality
 
-NanoPlot -t 2 --fastq /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz -p b01_its_ -o b15_its --maxlength 5000
+NanoPlot -t 5 --fastq /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz -p b01_its_ --only-report --maxlength 5000 -o .
 ```
 
 ```bash
 Repetir el mismo comando para los barcodes b02, b03, b04, b05, b06, b07, b08, b17 y b18
 ```
 
-## 3. Análisis metataxonómico utilizando datos Illumina
+```bash
+multiqc -o masato_its .
+```
+
+## 3. Limpieza de los archivos FASTQ 
+
+```bash
+cd ~/metataxonomic
+
+mkdir trim
+
+cd trim
+
+gunzip -c /data/2025_1/sequencing/metataxonomica/its_curso/b01.fastq.gz | NanoFilt -q 10 --length 600 --maxlength 2000 | gzip > b01_its.fastq.gz
+```
+
+```bash
+# Crear el siguiente script:
+
+nano count.sh
+
+#!/bin/bash
+
+echo "--- Conteo de Lecturas por Muestra (Archivos FASTQ) ---"
+echo "Archivo FASTQ | Número de Lecturas"
+echo "-----------------------------------"
+
+for file in *.fastq; do
+    if [ -f "$file" ]; then
+        num_lines=$(wc -l < "$file" | awk '{print $1}')
+        num_reads=$(echo "$num_lines / 4" | bc)
+        printf "%-15s | %s\n" "$file" "$num_reads"
+    fi
+done
+
+echo "-----------------------------------"
+```
+
+```bash
+cd ~/genomics/quality/nanopore
+
+NanoPlot -t 2 --fastq ~/genomics/trimming/nanopore/b15_sup_nanofilt.fastq.gz -p b15_sup_filt_ -o b15_sup_filt --maxlength 100000
+```
+
+
+
 
 ### 3.1 Crear los archivos metadata.txt y manifest.txt con las siguientes informaciones:
 
