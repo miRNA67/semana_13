@@ -25,8 +25,6 @@ WinSCP v6.1 https://winscp.net/eng/download.php
 
 ### Programas bioinformáticos:
 
-### Programas bioinformáticos:
-
 Emu v3.5.1 https://github.com/treangenlab/emu
    - **Descripción:** Emu (Evolutionary Microbial Unification) es una herramienta avanzada para la cuantificación precisa de microorganismos, optimizada para datos de secuenciación completa del gen 16S rRNA. Utiliza algoritmos sofisticados para asignar lecturas de forma precisa, incluso con errores, lo que permite una identificación fiable a nivel de especie. Es ideal para desentrañar la composición de comunidades microbianas complejas usando datos de 16S, especialmente de tecnologías de lectura larga.
 
@@ -39,8 +37,14 @@ Nanofilt v2.8.0 https://github.com/wdecoster/nanofilt
 NanoPlot v1.41.6 https://github.com/wdecoster/NanoPlot
    - **Descripción:** NanoPlot es una herramienta para la visualización de datos de secuenciación de Nanopore. Genera varios tipos de gráficos para evaluar la calidad y las características de los reads, como la distribución de longitudes y la calidad a lo largo de los reads.
 
+Phyloseq v1.46.0 https://github.com/joey711/phyloseq
+   - **Descripción:** Phyloseq es un paquete esencial de R que centraliza el análisis y visualización de datos de microbiomas de alta complejidad. Permite integrar tablas de OTUs/ASVs, taxonomía, metadatos y árboles filogenéticos en un solo objeto. Ofrece funciones robustas para filtrado, normalización, cálculo de diversidad y ordenación, facilitando el estudio de comunidades microbianas y promoviendo la reproducibilidad en la investigación.
+
 ### Herramientas bioinformáticas en línea:
 
+Easy16S https://shiny.migale.inrae.fr/app/easy16S
+   - **Descripción:** Easy16S es una plataforma web Shiny intuitiva para el análisis y visualización de datos de microbioma 16S, construida sobre phyloseq. Permite a usuarios de todos los niveles realizar análisis de diversidad alfa y beta, además de explorar la composición taxonómica y mapear covariables de forma sencilla. Su integración con FROGS y la exportación de resultados lo hacen una herramienta versátil. Es ideal para una rápida exploración de datos y formación, simplificando el acceso al estudio del microbioma.
+   
 MicrobiomeAnalyst v2.0 https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/home.xhtml
    - **Descripción:** MicrobiomeAnalyst es una plataforma web fácil de usar para el análisis estadístico, visual y meta-análisis integral de datos de microbioma. Está diseñada para ser accesible a investigadores y clínicos con diversos niveles de experiencia en bioinformática, proporcionando una interfaz intuitiva para explorar una amplia variedad de métodos establecidos. MicrobiomeAnalyst soporta datos de genes marcadores (por ejemplo, 16S rRNA) y datos de metagenómica de escopeta (shotgun). Sus módulos permiten el perfilado de la comunidad, análisis comparativos, predicción funcional e integración con conjuntos de datos públicos o firmas microbianas conocidas. Las funcionalidades clave incluyen el procesamiento y la normalización de datos, diversos análisis estadísticos (por ejemplo, abundancia diferencial), visualizaciones interactivas (por ejemplo, gráficos PCoA, mapas de calor, redes de correlación) e interpretación funcional (por ejemplo, análisis de redes metabólicas). También ofrece un módulo de procesamiento de datos brutos para datos de amplicones y un módulo para integrar datos de microbioma y metabolómica.
 
