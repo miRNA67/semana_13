@@ -137,7 +137,7 @@ echo "-----------------------------------"
 
 # Ejecutar el script:
 
-sh count
+sh count.sh
 ```
 
 ## 4. Identificación del perfil taxonómico a partir de los archivos FASTQ
